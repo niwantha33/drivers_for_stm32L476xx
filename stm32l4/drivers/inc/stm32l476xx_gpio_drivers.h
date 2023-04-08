@@ -31,7 +31,7 @@ typedef struct{
 	__VO u32	OTYPER;
 	__VO u32	OSPEEDR;
 	__VO u32	PUPDR;
-	__VO u32	IDR;
+	__C  u32	IDR;
 	__VO u32	ODR;
 	__VO u32	BSRR;
 	__VO u32	LCKR;
@@ -114,5 +114,26 @@ typedef struct{
 #define GPIO_NO_PUPD		0
 #define GPIO_PIN_PU			1
 #define GPIO_PIN_PD			2
+
+/* |< API Designs >| */
+
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx , uint8_t En_or_Di);
+
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+void GPIO_DeInit(GPIO_Handle_t *pGPIOHandle);
+
+// Data read and write
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx , uint8_t PinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx );
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx , uint8_t PinNumber, uint8_t value);
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx ,  uint16_t value);
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx , uint8_t PinNumber);
+
+
+// IRQ Configuration
+
+void GPIO_IRQConfig(uint8_t IRQNumber, uint8_t IRQPriority, uint8_t En_or_Di);
+void GPIO_IRQHandling(uint8_t PinNumber);
 
 #endif /* INC_STM32L476XX_GPIO_DRIVERS_H_ */

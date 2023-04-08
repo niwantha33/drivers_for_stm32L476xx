@@ -81,6 +81,7 @@ typedef struct{
 	__VO u32 CFGR;
 	__VO u32 PLLCFGR;
 	__VO u32 PLLSAI1CFGR;
+	__C	 u32 RESERVED0;
 	__VO u32 PLLSAI2CFGR;
 	__VO u32 CIER;
 	__VO u32 CIFR;
@@ -192,5 +193,5 @@ typedef struct{
 #define GPIO_PIN_SET				SET
 #define GPIO_PIN_RESET				RESET
 
-
+#include "stm32l476xx_gpio_drivers.h"
 #endif /* INC_STM32L476XX_H_ */
