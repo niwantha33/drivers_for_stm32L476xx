@@ -1,0 +1,3 @@
+"./Src/test_led.o"
+"./Startup/startup_stm32l476rgtx.o"
+"./drivers/src/stm32l476_gpio_drivers.o"
