@@ -68,7 +68,12 @@
 #define RCC_BASE_ADDR				(AHB1_PERIPHRAL_BASE + 0x1000U)
 
 
-/* Page:278 Table 34. RCC register map and reset values */
+/*
+ * @rcc_map
+ * Page:278 Table 34. RCC register map and reset values
+ *
+ * added reserved 1 - 6
+*/
 typedef struct{
 
 	__VO u32 CR;
@@ -122,6 +127,44 @@ typedef struct{
 #define GPIOG_BASE_ADDR				(AHB2_PERIPHRAL_BASE + 0x1800U)
 #define GPIOH_BASE_ADDR				(AHB2_PERIPHRAL_BASE + 0x1C00U)
 
+/* Enable clock - RCC */
+#define GPIOA_PCLK_EN()		(RCC->AHB2ENR |= (1U << 0))
+#define GPIOB_PCLK_EN()		(RCC->AHB2ENR |= (1U << 1))
+#define GPIOC_PCLK_EN()		(RCC->AHB2ENR |= (1U << 2))
+#define GPIOD_PCLK_EN()		(RCC->AHB2ENR |= (1U << 3))
+#define GPIOE_PCLK_EN()		(RCC->AHB2ENR |= (1U << 4))
+#define GPIOF_PCLK_EN()		(RCC->AHB2ENR |= (1U << 5))
+#define GPIOG_PCLK_EN()		(RCC->AHB2ENR |= (1U << 6))
+#define GPIOH_PCLK_EN()		(RCC->AHB2ENR |= (1U << 7))
+#define GPIOI_PCLK_EN()		(RCC->AHB2ENR |= (1U << 8))
+
+// GPIO_X
+#define GPIOA					((GPIO_RegDef_t *)GPIOA_BASE_ADDR)
+#define GPIOB					((GPIO_RegDef_t *)GPIOB_BASE_ADDR)
+#define GPIOC					((GPIO_RegDef_t *)GPIOC_BASE_ADDR)
+#define GPIOD					((GPIO_RegDef_t *)GPIOD_BASE_ADDR)
+#define GPIOE					((GPIO_RegDef_t *)GPIOE_BASE_ADDR)
+#define GPIOF					((GPIO_RegDef_t *)GPIOF_BASE_ADDR)
+#define GPIOG					((GPIO_RegDef_t *)GPIOG_BASE_ADDR)
+#define GPIOH					((GPIO_RegDef_t *)GPIOH_BASE_ADDR)
+#define GPIOI					((GPIO_RegDef_t *)GPIOI_BASE_ADDR)
+
+
+/* |<  bit to 1 and then immediately clearing it to 0 >|*/
+#define GPIOA_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 0); RCC->AHB2RSRTR &= (~(0b1 << 0));}while(0)})
+#define GPIOB_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 1); RCC->AHB2RSRTR &= (~(0b1 << 1));}while(0)})
+#define GPIOC_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 2); RCC->AHB2RSRTR &= (~(0b1 << 2));}while(0)})
+#define GPIOD_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 3); RCC->AHB2RSRTR &= (~(0b1 << 3));}while(0)})
+#define GPIOE_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 4); RCC->AHB2RSRTR &= (~(0b1 << 4));}while(0)})
+#define GPIOF_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 5); RCC->AHB2RSRTR &= (~(0b1 << 5));}while(0)})
+#define GPIOG_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 6); RCC->AHB2RSRTR &= (~(0b1 << 6));}while(0)})
+#define GPIOH_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 7); RCC->AHB2RSRTR &= (~(0b1 << 7));}while(0)})
+#define GPIOI_RESET_PIN		(do{RCC->AHB2RSTR |= (1U << 8); RCC->AHB2RSRTR &= (~(0b1 << 8));}while(0)})
+
+
+
+
+
 // APB1 - I2C
 #define I2C1_BASE_ADDR				(APB1_PERIPHRAL_BASE + 0x5400U)
 #define I2C2_BASE_ADDR				(APB1_PERIPHRAL_BASE + 0x5800U)
@@ -140,6 +183,14 @@ typedef struct{
 #define	EXTI_BASE_ADDR				(APB2_PERIPHRAL_BASE + 0x0400U)
 #define	SP11_BASE_ADDR				(APB2_PERIPHRAL_BASE + 0x3000U)
 #define	USART1_BASE_ADDR			(APB2_PERIPHRAL_BASE + 0x3800U)
+
+/* common MACROS* */
+#define ENABLE						1
+#define DISABLE						0
+#define SET							ENABLE
+#define RESET						DISABLE
+#define GPIO_PIN_SET				SET
+#define GPIO_PIN_RESET				RESET
 
 
 #endif /* INC_STM32L476XX_H_ */

@@ -62,9 +62,9 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x103 ./drivers/src/stm32l476_gpio_drivers.o
  .debug_macro   0x0000000000000000       0x6a ./drivers/src/stm32l476_gpio_drivers.o
  .debug_macro   0x0000000000000000      0x1df ./drivers/src/stm32l476_gpio_drivers.o
- .debug_macro   0x0000000000000000       0xff ./drivers/src/stm32l476_gpio_drivers.o
+ .debug_macro   0x0000000000000000      0x148 ./drivers/src/stm32l476_gpio_drivers.o
  .debug_line    0x0000000000000000      0x45c ./drivers/src/stm32l476_gpio_drivers.o
- .debug_str     0x0000000000000000     0x423e ./drivers/src/stm32l476_gpio_drivers.o
+ .debug_str     0x0000000000000000     0x4426 ./drivers/src/stm32l476_gpio_drivers.o
  .comment       0x0000000000000000       0x51 ./drivers/src/stm32l476_gpio_drivers.o
  .ARM.attributes
                 0x0000000000000000       0x34 ./drivers/src/stm32l476_gpio_drivers.o
@@ -432,7 +432,7 @@ LOAD /media/algobel/EXT4/stm32Freertos/makeself_dir_w3CniK/y/plugins/com.st.stm3
  .debug_ranges  0x0000000000000000       0x10 ./Src/test_led.o
  .debug_ranges  0x0000000000000010       0x20 ./Startup/startup_stm32l476rgtx.o
 
-.debug_macro    0x0000000000000000     0x103c
+.debug_macro    0x0000000000000000     0x1085
  .debug_macro   0x0000000000000000       0x72 ./Src/test_led.o
  .debug_macro   0x0000000000000072      0xa7e ./Src/test_led.o
  .debug_macro   0x0000000000000af0       0x22 ./Src/test_led.o
@@ -441,16 +441,16 @@ LOAD /media/algobel/EXT4/stm32Freertos/makeself_dir_w3CniK/y/plugins/com.st.stm3
  .debug_macro   0x0000000000000bf1      0x103 ./Src/test_led.o
  .debug_macro   0x0000000000000cf4       0x6a ./Src/test_led.o
  .debug_macro   0x0000000000000d5e      0x1df ./Src/test_led.o
- .debug_macro   0x0000000000000f3d       0xff ./Src/test_led.o
+ .debug_macro   0x0000000000000f3d      0x148 ./Src/test_led.o
 
 .debug_line     0x0000000000000000      0x4c3
  .debug_line    0x0000000000000000      0x43f ./Src/test_led.o
  .debug_line    0x000000000000043f       0x84 ./Startup/startup_stm32l476rgtx.o
 
-.debug_str      0x0000000000000000     0x40e2
- .debug_str     0x0000000000000000     0x40b1 ./Src/test_led.o
-                                       0x420c (size before relaxing)
- .debug_str     0x00000000000040b1       0x31 ./Startup/startup_stm32l476rgtx.o
+.debug_str      0x0000000000000000     0x42ca
+ .debug_str     0x0000000000000000     0x4299 ./Src/test_led.o
+                                       0x43f4 (size before relaxing)
+ .debug_str     0x0000000000004299       0x31 ./Startup/startup_stm32l476rgtx.o
                                          0x88 (size before relaxing)
 
 .comment        0x0000000000000000       0x50
